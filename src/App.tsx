@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import logo from './logo.svg';
+import React, {Component, Fragment} from 'react';
 import './App.css';
+import Routes from './components/Routes/Routes';
 
 interface IProps{
   title: string
@@ -21,7 +21,10 @@ export default class App extends Component<IProps, IState>{
 
   render() {
     return (
-    <h1>{this.props.title}</h1>
+    <Fragment>
+      <h1>{this.props.title}</h1>
+      <Routes/>
+    </Fragment>
     );
   }
 }
