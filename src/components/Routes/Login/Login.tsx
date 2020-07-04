@@ -4,12 +4,9 @@ import Container from '../../BasicComponents/Container';
 import Card from '../../BasicComponents/Card';
 import FormGroup from '../../BasicComponents/FormComponents/FormGroup';
 import ButtonSubmit from '../../BasicComponents/FormComponents/ButtonSubmit';
-import IconForm from '../../BasicComponents/FormComponents/IconForm';
-import InputGroup from '../../BasicComponents/FormComponents/InputGroup';
-import { FaUser, FaLock } from "react-icons/fa";
-import EmailInput from '../../BasicComponents/FormComponents/BasicInputs/EmailInput';
-import PasswordInput from '../../BasicComponents/FormComponents/BasicInputs/PasswordInput';
-
+import EmailField from './EmailField';
+import PasswordField from './PasswordField';
+import {Link} from 'react-router-dom';
 
 export default class Login extends Component{
 
@@ -21,22 +18,22 @@ export default class Login extends Component{
                             <form>
                                 <FormGroup content={
                                     <Fragment>
-                                        <InputGroup content={
-                                            <Fragment>
-                                                <IconForm icon={<FaUser/>}/>
-                                                <EmailInput/>
-                                            </Fragment>
-                                        }/>
-                                        <InputGroup content={
-                                            <Fragment>
-                                                <IconForm icon={<FaLock/>}/>
-                                                <PasswordInput/>
-                                            </Fragment>
-                                        }/>
+                                        <EmailField/>
+                                        <PasswordField/>
                                         <ButtonSubmit name="Enviar"/>
                                     </Fragment>
                                 }/>
                             </form>
+                        }
+                        footer={
+                            <Fragment>
+                                <div className="d-flex justify-content-center links">
+                                    Don't have an account?<Link to="#">Sign Up</Link>
+                                </div>
+                                <div className="d-flex justify-content-center">
+                                    <Link to="#">Forgot your password?</Link>
+                                </div>
+                            </Fragment>
                         }/>
                 }/>
         );
